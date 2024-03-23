@@ -12,6 +12,7 @@
     "@liveblocks/client": "^1.11.0",
     "@liveblocks/react": "^1.11.0",
     "@liveblocks/react-comments": "^1.11.0",
+    "canvas": "^2.11.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "fabric": "^5.3.0",

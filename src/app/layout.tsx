@@ -1,6 +1,7 @@
 import { title } from "process";
 import "./globals.css";
 import type { Metadata } from 'next'
+import { SocketProvider } from "@/context/SocketProvider";
  
 export const metadata: Metadata = {
   title: 'FusionFlow',
@@ -14,7 +15,9 @@ export default function RootLayout({
   }) {
     return (
       <html lang="en">
-        <body>{children}</body>
+        <SocketProvider>
+          <body>{children}</body>
+        </SocketProvider>
       </html>
     )
 }

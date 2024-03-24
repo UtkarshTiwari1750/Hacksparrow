@@ -26,6 +26,11 @@ import { ActiveElement, Attributes } from "../../../types/type";
 
 const Home = () => {
 
+  type KeyValueArray = {
+    key: number[],
+    value: string[]
+  }
+
   const undo = useUndo();
   const redo = useRedo();
   const canvasObjects = useStorage((root) => root.canvasObjects);
@@ -68,7 +73,7 @@ const Home = () => {
     const canvasObjects = storage.get("canvasObjects");
     if (!canvasObjects || canvasObjects.size === 0) return true;
 
-    for (const [key, value] of canvasObjects.entries()) {
+    for (const key of Object.keys(canvasObjects)  ) {
       canvasObjects.delete(key);
     }
     return canvasObjects.size === 0;
